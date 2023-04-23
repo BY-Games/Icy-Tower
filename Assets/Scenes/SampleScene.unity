@@ -2046,7 +2046,7 @@ MonoBehaviour:
   - {fileID: 8747747012439561407, guid: 53dd18d13c19ecf4783a9d40d138fedb, type: 3}
   - {fileID: 7583228754749982852, guid: 9b37704255e764e4691ee298000b2ade, type: 3}
   platformCountToSwitch: 50
-  platformCount: 50
+  platformCount: 100
   spawnDelay: 0
 --- !u!114 &1416992600
 MonoBehaviour:
