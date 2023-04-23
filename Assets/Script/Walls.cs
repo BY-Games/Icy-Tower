@@ -36,5 +36,11 @@ public class Walls : MonoBehaviour
         Instantiate(leftWall, leftWallPos, Quaternion.identity);
         Instantiate(rightWall, rightWallPos, Quaternion.identity);
     }
+
+    private void OnBecameInvisible()
+    {
+        Debug.Log("del");
+        Destroy(this.gameObject);
+    }
 }
 

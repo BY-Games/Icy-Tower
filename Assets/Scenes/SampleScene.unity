@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &131195115
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738555765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.63343, y: -2.3609757, z: 10}
+  m_LocalPosition: {x: -1.7, y: -2.3609757, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -647,7 +647,7 @@ MonoBehaviour:
       m_Action: Move Horizontal
       m_Flags: 8
     m_Flags: 0
-  jumpImpulse: 12
+  jumpImpulse: 20
   jump:
     m_Name: Jump
     m_Type: 0
@@ -1929,41 +1929,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1390631461}
-    m_ColliderPaths:
-    - - X: 50000000
-        Y: 130000000
-      - X: 10000000
-        Y: 130000000
-      - X: 10000000
-        Y: 120000000
-      - X: 50000000
-        Y: 120000000
-    - - X: -30000000
-        Y: 90000000
-      - X: -40000000
-        Y: 90000000
-      - X: -40000000
-        Y: 80000000
-      - X: -30000000
-        Y: 80000000
-    - - X: 209687504
-        Y: -10000000
-      - X: -250312496
-        Y: -10000000
-      - X: -250312496
-        Y: -30000000
-      - X: 209687504
-        Y: -30000000
-    - - X: 369687488
-        Y: -10000000
-      - X: 279687488
-        Y: -10000000
-      - X: 279687488
-        Y: -20000000
-      - X: 369687488
-        Y: -20000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 4.999971, y: 12}
@@ -2050,7 +2016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416992596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.217037, y: 4.9100647, z: -0.12984537}
+  m_LocalPosition: {x: -8.6, y: 4.9100647, z: -0.12984537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2069,10 +2035,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81db7fcfed2b0d342973ce803fb107e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToSpawn:
+  lvl1:
+  - {fileID: 917000899270170080, guid: 9452ea6463a605146901a79679049dc5, type: 3}
   - {fileID: 495949400810575966, guid: bc06abe60362d814fb4389980e617b3f, type: 3}
   - {fileID: 93962330326450352, guid: 4562a9f5063cbf649b130de369ca06fe, type: 3}
+  lvl2:
+  - {fileID: 1944312660268253119, guid: 5fe9c14f01540d540ab940566f4f4430, type: 3}
   - {fileID: 5929429426792316742, guid: 025e434aac6f76d418df1d9ec3fb117c, type: 3}
+  lvl3:
+  - {fileID: 8747747012439561407, guid: 53dd18d13c19ecf4783a9d40d138fedb, type: 3}
+  - {fileID: 7583228754749982852, guid: 9b37704255e764e4691ee298000b2ade, type: 3}
   platformCountToSwitch: 50
   platformCount: 50
   spawnDelay: 0
