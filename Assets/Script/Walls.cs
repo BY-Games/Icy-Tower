@@ -31,16 +31,20 @@ public class Walls : MonoBehaviour
 
     void BuildWalls()
     {
-        leftWallPos.y += 1;
-        rightWallPos.y += 1;
-        Instantiate(leftWall, leftWallPos, Quaternion.identity);
-        Instantiate(rightWall, rightWallPos, Quaternion.identity);
+        if (player != null)
+        {
+            leftWallPos.y += 1;
+            rightWallPos.y += 1;
+            Instantiate(leftWall, leftWallPos, Quaternion.identity);
+            Instantiate(rightWall, rightWallPos, Quaternion.identity);
+        }
+       
     }
 
     private void OnBecameInvisible()
     {
-        Debug.Log("del");
-        Destroy(this.gameObject);
+     //   Debug.Log("del");
+      //  Destroy(this.gameObject);
     }
 }
 

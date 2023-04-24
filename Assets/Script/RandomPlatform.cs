@@ -17,7 +17,8 @@ public class RandomPlatform : MonoBehaviour
     private Vector3 spawnPosition = new Vector3(0, 0, 0);
     private int currentPlatformCount = 0;
     private int currentLevel = 1;
-
+    public static int numOfPlatforms = 0;
+    public int platformsToDestory = 50;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +32,11 @@ public class RandomPlatform : MonoBehaviour
     private IEnumerator SpawnPlatforms()
     {
         bool spawnFirstPlatform = true;
+
         while (currentPlatformCount < platformCount)
         {
-            Debug.Log("currentPlatformCount: " + currentPlatformCount + ",platformCount: " + platformCount);
+          
+            // Debug.Log("currentPlatformCount: " + currentPlatformCount + ",platformCount: " + platformCount);
 
             // Determine which level to use
             GameObject[] levelToUse;
@@ -56,7 +59,7 @@ public class RandomPlatform : MonoBehaviour
 
             // Spawn the platform
             GameObject platform = Instantiate(levelToUse[prefabIndex], spawnPosition, Quaternion.identity);
-
+            numOfPlatforms++;
             // Update the spawn position and platform count
             spawnPosition.y += Random.Range(4f, 5f);
             spawnPosition.x = Random.Range(-7f, 7f);
@@ -123,13 +126,13 @@ public class RandomPlatform : MonoBehaviour
     private void OnBecameInvisible()
     {
         // Check if the object is a platform
-        if (gameObject.CompareTag("Ground"))
-        {
+        // if (gameObject.CompareTag("Ground"))
+        //  {
 
-            
-            // Destroy the platform object
-            Destroy(gameObject);
-        }
+
+        // Destroy the platform object
+        //     Destroy(gameObject);
+        // }
     }
 }
 
