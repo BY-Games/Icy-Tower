@@ -39,7 +39,7 @@ public class RandomPlatform : MonoBehaviour
             {
                 Debug.Log("numOfPlatforms: " + numOfPlatforms);
                 /// yield return new WaitForSeconds(1);
-                    
+
 
                 // Debug.Log("currentPlatformCount: " + currentPlatformCount + ",platformCount: " + platformCount);
 
@@ -110,7 +110,7 @@ public class RandomPlatform : MonoBehaviour
                 {
                     currentLevel++;
                     spawnFirstPlatform = true; // Set flag to spawn the first platform in the new level
-                    platformCount = 150; // Set platform count to 50 for level 2
+                    platformCount = 150; // Set platform count to 150 for level 2
 
                 }
                 else
@@ -118,8 +118,8 @@ public class RandomPlatform : MonoBehaviour
                     spawnFirstPlatform = false; // Set flag to spawn random platforms
                 }
             }
-          //  Debug.Log("new instanite");
-            
+            //  Debug.Log("new instanite");
+
             yield return new WaitForSeconds(spawnDelay);
         }
 
@@ -132,14 +132,12 @@ public class RandomPlatform : MonoBehaviour
     //todo not work well 
     private void OnBecameInvisible()
     {
-        // Check if the object is a platform
-        // if (gameObject.CompareTag("Ground"))
-        //  {
 
+        if (gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
 
-        // Destroy the platform object
-        //     Destroy(gameObject);
-        // }
     }
 }
 

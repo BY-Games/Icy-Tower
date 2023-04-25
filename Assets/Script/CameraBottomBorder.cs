@@ -24,9 +24,12 @@ public class CameraBottomBorder : MonoBehaviour
         //Destroy(collision.gameObject);
     }
 
+
+    //Destroy the player object when it touches the bottom border of the camera in the camera 
+    // and move to the next scene
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("tag:" + collision.name);
+        //Debug.Log("tag:" + collision.name);
         Destroy(collision.gameObject);
         RandomPlatform.numOfPlatforms--;
     }
