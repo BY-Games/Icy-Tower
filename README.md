@@ -45,8 +45,8 @@ The game ends when the player falls off the platforms and out of the camera's vi
 [CameraBottomBorder.sc](    )
 
 # Controls
-Right arrow: move to the right.
-Left arrow: move to the left.
-Space bar: jump.
+- Right arrow: move to the right.
+- Left arrow: move to the left.
+- Space bar: jump.
 # Editor version
 2021.3.18f1
