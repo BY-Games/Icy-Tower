@@ -10,7 +10,7 @@ public class RandomPlatform : MonoBehaviour
     [SerializeField] GameObject[] lvl3;
 
 
-    [SerializeField] int platformCountToSwitch = 50; // Set to 50 for both level 1 and level 2
+   // [SerializeField] int platformCountToSwitch = 50; // Set to 50 for both level 1 and level 2
     [SerializeField] int platformCount = 100; // Set to 100 for both level 1 and level 2
     [SerializeField] float spawnDelay;
 

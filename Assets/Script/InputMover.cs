@@ -9,8 +9,7 @@ using UnityEngine.InputSystem;
  */
 public class InputMover : MonoBehaviour
 {
-    [Tooltip("The horizontal force that the player's feet use for walking, in newtons.")]
-    [SerializeField] float walkForce = 5f;
+   
     [Tooltip("Speed of movement, in meters per second")]
     [SerializeField] float speed = 10f;
     [SerializeField] InputAction moveHorizontal = new InputAction(type: InputActionType.Button);

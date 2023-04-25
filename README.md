@@ -42,6 +42,7 @@ The [Wall.cs]() script generates walls on either side of the player as they move
 
 # How to Play
 The game ends when the player falls off the platforms and out of the camera's view.
+[CameraBottomBorder.sc](    )
 
 # Controls
 Right arrow: move to the right.

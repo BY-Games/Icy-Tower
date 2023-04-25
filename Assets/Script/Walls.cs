@@ -10,7 +10,6 @@ public class Walls : MonoBehaviour
     [SerializeField] Vector3 leftWallPos;
     [SerializeField] Vector3 rightWallPos;
     [SerializeField] Transform player;
-    [SerializeField] float wallBuildDistance = 20f;
 
     
 
