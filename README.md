@@ -4,6 +4,7 @@ This game is a demonstration of the concept of platform games. In this game, the
 
 The game has three levels.  
 
+[Play on itch.io](https://by-games.itch.io/icy-tower)
 ## Level 1: 
 Two different sizes of platforms (big and medium) make this an easy level to help the player understand the game's mechanics. To complete the level, the player needs to jump on 50 platforms.
 ![Alt text](Assets/Images/lvl1.jpg)
