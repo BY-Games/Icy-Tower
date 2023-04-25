@@ -2105,7 +2105,6 @@ MonoBehaviour:
   - {fileID: 7583228754749982852, guid: 9b37704255e764e4691ee298000b2ade, type: 3}
   platformCount: 100
   spawnDelay: 0
-  platformsToDestory: 50
 --- !u!114 &1416992600
 MonoBehaviour:
   m_ObjectHideFlags: 0

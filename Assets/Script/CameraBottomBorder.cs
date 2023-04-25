@@ -6,29 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class CameraBottomBorder : MonoBehaviour
 {
-   
+    [SerializeField] GameObject numOfPlatforms;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Screen.width " + Screen.width);
-        Debug.Log("Screen.height " + Screen.height);
+        //   Debug.Log("Screen.width " + Screen.width);
+        //   Debug.Log("Screen.height " + Screen.height);
 
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-      //  Debug.Log("debugggggggggggggggg");
-        //Destroy(collision.gameObject);
+        Debug.Log("is happnd ");
+        int number = numOfPlatforms.GetComponent<RandomPlatform>().numOfPlatforms;
+        Destroy(collision.gameObject);
+        number--;
     }
 
-<<<<<<< HEAD
 
     //Destroy the player object when it touches the bottom border of the camera in the camera 
     //quite the game
@@ -38,26 +40,15 @@ public class CameraBottomBorder : MonoBehaviour
         if (collision.tag == "Player")
         {
             Destroy(collision.gameObject);
-           // if (Application.isEditor)
-           // {
-               // UnityEditor.EditorApplication.isPlaying = false;
-          //  }
-           // else
-           // {
-                Application.Quit();
-           // }
+            // if (Application.isEditor)
+            // {
+            // UnityEditor.EditorApplication.isPlaying = false;
+            //  }
+            // else
+            // {
+            Application.Quit();
+            // }
         }
-        else
-        {
-            Destroy(collision.gameObject);
-            RandomPlatform.numOfPlatforms--;
-        }
-=======
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("tag:" + collision.name);
-        Destroy(collision.gameObject);
-        RandomPlatform.numOfPlatforms--;
->>>>>>> parent of 9826d4f (update)
+
     }
 }
