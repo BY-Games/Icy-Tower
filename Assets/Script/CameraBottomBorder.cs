@@ -10,20 +10,21 @@ public class CameraBottomBorder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+                // Debug.Log("Screen.width " + Screen.width);
+        // Debug.Log("Screen.height " + Screen.height);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Screen.width " + Screen.width);
-        Debug.Log("Screen.height " + Screen.height);
+
 
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("tag:" + collision.gameObject.name);
       //  Debug.Log("debugggggggggggggggg");
         //Destroy(collision.gameObject);
     }
@@ -33,7 +34,7 @@ public class CameraBottomBorder : MonoBehaviour
     //quite the game
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("tag:" + collision.name);
+        Debug.Log("tag:" + collision.name);
         if (collision.tag == "Player")
         {
             Destroy(collision.gameObject);

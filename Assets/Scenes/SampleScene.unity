@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: right wall
       objectReference: {fileID: 0}
+    - target: {fileID: 3653400438338602804, guid: 2469237b9122d804493a16f7d0fa483b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4982434103609097450, guid: 2469237b9122d804493a16f7d0fa483b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -487,7 +491,7 @@ GameObject:
   - component: {fileID: 738555766}
   m_Layer: 0
   m_Name: black-brick-wall-textured-background
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,6 +798,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1071448381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071448383}
+  - component: {fileID: 1071448382}
+  m_Layer: 0
+  m_Name: WorldBuild
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1071448382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071448381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81db7fcfed2b0d342973ce803fb107e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvl1:
+  - {fileID: 917000899270170080, guid: 9452ea6463a605146901a79679049dc5, type: 3}
+  - {fileID: 495949400810575966, guid: bc06abe60362d814fb4389980e617b3f, type: 3}
+  - {fileID: 93962330326450352, guid: 4562a9f5063cbf649b130de369ca06fe, type: 3}
+  lvl2:
+  - {fileID: 1944312660268253119, guid: 5fe9c14f01540d540ab940566f4f4430, type: 3}
+  - {fileID: 5929429426792316742, guid: 025e434aac6f76d418df1d9ec3fb117c, type: 3}
+  lvl3:
+  - {fileID: 8747747012439561407, guid: 53dd18d13c19ecf4783a9d40d138fedb, type: 3}
+  - {fileID: 7583228754749982852, guid: 9b37704255e764e4691ee298000b2ade, type: 3}
+  platformCount: 100
+  spawnDelay: 0.1
+  platformsToDestory: 50
+--- !u!4 &1071448383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071448381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1390631455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,6 +2478,10 @@ PrefabInstance:
     - target: {fileID: 3653400438338602804, guid: 2469237b9122d804493a16f7d0fa483b, type: 3}
       propertyPath: m_Name
       value: left walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653400438338602804, guid: 2469237b9122d804493a16f7d0fa483b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4982434103609097450, guid: 2469237b9122d804493a16f7d0fa483b, type: 3}
       propertyPath: m_RootOrder

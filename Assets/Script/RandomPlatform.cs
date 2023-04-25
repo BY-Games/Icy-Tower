@@ -35,8 +35,7 @@ public class RandomPlatform : MonoBehaviour
         while (currentPlatformCount < platformCount)
         {
 
-            if (numOfPlatforms < platformsToDestory)
-            {
+            
                 Debug.Log("numOfPlatforms: " + numOfPlatforms);
                 /// yield return new WaitForSeconds(1);
 
@@ -117,7 +116,7 @@ public class RandomPlatform : MonoBehaviour
                 {
                     spawnFirstPlatform = false; // Set flag to spawn random platforms
                 }
-            }
+            
             //  Debug.Log("new instanite");
 
             yield return new WaitForSeconds(spawnDelay);
@@ -128,8 +127,7 @@ public class RandomPlatform : MonoBehaviour
 
 
 
-
-    //todo not work well 
+ 
     private void OnBecameInvisible()
     {
 
