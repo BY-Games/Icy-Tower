@@ -2106,6 +2106,7 @@ MonoBehaviour:
   platformCountToSwitch: 50
   platformCount: 100
   spawnDelay: 0
+  platformsToDestory: 50
 --- !u!114 &1416992600
 MonoBehaviour:
   m_ObjectHideFlags: 0

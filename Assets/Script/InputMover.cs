@@ -66,6 +66,7 @@ public class InputMover : MonoBehaviour
         jump.Disable();
     }
 
+    
     private void OnCollisionEnter2D(Collision2D c)
     {
 
@@ -130,34 +131,10 @@ public class InputMover : MonoBehaviour
     }
 
 
-
+    //handle the physics og the game.
+    //let the player jump.
     private void FixedUpdate()
     {
-
-        /*
-        // Update velocity and position:
-        if (playerWantsToJump)
-        {
-            Debug.Log("Jumping!");
-
-            //velocity = 20 * Vector3.up;
-
-            playerWantsToJump = false;
-        }
-        if (isTouchingTheGround && velocity.y <= 0)
-        {
-            velocity = Vector3.zero;
-        }
-        else
-        {
-            velocity += acceleration * Time.fixedDeltaTime;
-        }
-        transform.position += velocity * Time.fixedDeltaTime;
-    }
-        */
-
-
-
         if (playerWantsToJump && isTouchingTheGround && velocity.y <= 0)
         {
             Debug.Log("Jumping!");
@@ -166,7 +143,6 @@ public class InputMover : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
-
             playerWantsToJump = false;
 
         }

@@ -28,7 +28,6 @@ public class CameraBottomBorder : MonoBehaviour
     {
         Debug.Log("tag:" + collision.name);
         Destroy(collision.gameObject);
-        Application.Quit();
-        
+        RandomPlatform.numOfPlatforms--;
     }
 }

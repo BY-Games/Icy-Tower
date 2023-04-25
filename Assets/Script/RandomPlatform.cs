@@ -32,87 +32,94 @@ public class RandomPlatform : MonoBehaviour
     private IEnumerator SpawnPlatforms()
     {
         bool spawnFirstPlatform = true;
-
         while (currentPlatformCount < platformCount)
         {
-          
-            // Debug.Log("currentPlatformCount: " + currentPlatformCount + ",platformCount: " + platformCount);
 
-            // Determine which level to use
-            GameObject[] levelToUse;
-            if (currentLevel == 1 || currentLevel == 2) // lvl 1 and lvl 2 have 50 platforms each
+            if (numOfPlatforms < platformsToDestory)
             {
-                levelToUse = currentLevel == 1 ? lvl1 : lvl2;
-            }
-            else
-            {
-                levelToUse = lvl3;
-            }
+                Debug.Log("numOfPlatforms: " + numOfPlatforms);
+                /// yield return new WaitForSeconds(1);
+                    
 
+                // Debug.Log("currentPlatformCount: " + currentPlatformCount + ",platformCount: " + platformCount);
 
-            // Determine which platform prefab to use
-            int prefabIndex = 0; // Always start with the first platform in the level
-            if (!spawnFirstPlatform)
-            {
-                prefabIndex = Random.Range(1, levelToUse.Length); // Choose a random platform prefab
-            }
-
-            // Spawn the platform
-            GameObject platform = Instantiate(levelToUse[prefabIndex], spawnPosition, Quaternion.identity);
-            numOfPlatforms++;
-            // Update the spawn position and platform count
-            spawnPosition.y += Random.Range(4f, 5f);
-            spawnPosition.x = Random.Range(-7f, 7f);
-
-
-
-            // Check if the platform is a level 3 platform and attach the MovingPlatform script if it is
-            if (currentLevel == 3)
-            {
-                MovingPlatform movingPlatform = platform.GetComponent<MovingPlatform>();
-                if (movingPlatform != null)
+                // Determine which level to use
+                GameObject[] levelToUse;
+                if (currentLevel == 1 || currentLevel == 2) // lvl 1 and lvl 2 have 50 platforms each
                 {
-                    // Set the start and end points for the moving platform
-                    Transform startPoint = new GameObject("Start Point").transform;
-                    startPoint.position = spawnPosition;
-                    Transform endPoint = new GameObject("End Point").transform;
-                    endPoint.position = new Vector3(spawnPosition.x * -7, spawnPosition.y, spawnPosition.z);
-                    movingPlatform.startPoint = startPoint;
-                    movingPlatform.endPoint = endPoint;
+                    levelToUse = currentLevel == 1 ? lvl1 : lvl2;
+                }
+                else
+                {
+                    levelToUse = lvl3;
+                }
 
 
-                    // note this make endless loop 
-                    platformCount++;
-                    currentPlatformCount--;
+                // Determine which platform prefab to use
+                int prefabIndex = 0; // Always start with the first platform in the level
+                if (!spawnFirstPlatform)
+                {
+                    prefabIndex = Random.Range(1, levelToUse.Length); // Choose a random platform prefab
+                }
+
+                // Spawn the platform
+                GameObject platform = Instantiate(levelToUse[prefabIndex], spawnPosition, Quaternion.identity);
+                numOfPlatforms++;
+                // Update the spawn position and platform count
+                spawnPosition.y += Random.Range(4f, 5f);
+                spawnPosition.x = Random.Range(-7f, 7f);
+
+
+
+                // Check if the platform is a level 3 platform and attach the MovingPlatform script if it is
+                if (currentLevel == 3)
+                {
+                    MovingPlatform movingPlatform = platform.GetComponent<MovingPlatform>();
+                    if (movingPlatform != null)
+                    {
+                        // Set the start and end points for the moving platform
+                        Transform startPoint = new GameObject("Start Point").transform;
+                        startPoint.position = spawnPosition;
+                        Transform endPoint = new GameObject("End Point").transform;
+                        endPoint.position = new Vector3(spawnPosition.x * -5, spawnPosition.y, spawnPosition.z);
+                        movingPlatform.startPoint = startPoint;
+                        movingPlatform.endPoint = endPoint;
+
+
+                        // note this make endless loop 
+                        platformCount++;
+                        currentPlatformCount--;
+                    }
+                }
+
+                if (currentLevel < 3)
+                {
+                    currentPlatformCount++;
+                }
+
+
+                // Determine if we should switch to the next level
+                if (currentLevel == 1 && currentPlatformCount == 49)
+                {
+
+                    currentLevel++;
+                    spawnFirstPlatform = true; // Set flag to spawn the first platform in the new level
+                    platformCount = 100; // Set platform count to 50 for level 2
+                }
+                else if (currentLevel == 2 && currentPlatformCount == 99)
+                {
+                    currentLevel++;
+                    spawnFirstPlatform = true; // Set flag to spawn the first platform in the new level
+                    platformCount = 150; // Set platform count to 50 for level 2
+
+                }
+                else
+                {
+                    spawnFirstPlatform = false; // Set flag to spawn random platforms
                 }
             }
-
-            if (currentLevel < 3)
-            {
-                currentPlatformCount++;
-            }
-
-
-            // Determine if we should switch to the next level
-            if (currentLevel == 1 && currentPlatformCount == 49)
-            {
-
-                currentLevel++;
-                spawnFirstPlatform = true; // Set flag to spawn the first platform in the new level
-                platformCount = 100; // Set platform count to 50 for level 2
-            }
-            else if (currentLevel == 2 && currentPlatformCount == 99)
-            {
-                currentLevel++;
-                spawnFirstPlatform = true; // Set flag to spawn the first platform in the new level
-                platformCount = 150; // Set platform count to 50 for level 2
-
-            }
-            else
-            {
-                spawnFirstPlatform = false; // Set flag to spawn random platforms
-            }
-
+          //  Debug.Log("new instanite");
+            
             yield return new WaitForSeconds(spawnDelay);
         }
 
